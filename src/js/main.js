@@ -1,7 +1,14 @@
-import '../scss/styles.scss';
+import '../scss/main.scss';
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <h1>Vanilla Vite!</h1>
-  </div>
-`;
+/**
+ * Main JS scripts
+ *
+ * @since 1.0
+ */
+document.addEventListener('click', (e) => {
+  const el = e.target;
+
+  if (el.closest('[data-js-event]')) {
+    e.preventDefault();
+  }
+});
