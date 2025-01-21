@@ -25,9 +25,17 @@ export default defineConfig({
         ...additionalFiles,
       },
       output: {
-        assetFileNames: '[ext]/[name].[ext]',
+        assetFileNames: chunkInfo => {
+          const ext = chunkInfo.name.split('.').pop();
+          if (ext === 'css') {
+            return 'css/[name].[ext]';
+          } else if (['woff2', 'woff', 'ttf', 'eot'].includes(ext)) {
+            return 'fonts/[name].[ext]';
+          } else {
+            return '[ext]/[name].[ext]';
+          }
+        },
         entryFileNames: 'js/[name].js',
-        chunkFileNames: 'js/[name].js',
       },
     },
     minify: false, // 'esbuild',
