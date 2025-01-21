@@ -56,6 +56,14 @@ This is the structure of the project:
 ├── vite.config.min.js      # Configuration for minified JS & CSS Vite files
 ```
 
+## SVG usage
+
+```
+<svg width="16" height="17" viewBox="0 0 16 17">
+  <use xlink:href="./assets/sprites/states.svg#sprite-linkedin-logo"></use>
+</svg>
+```
+
 ## License
 
 This template was created under the [MIT License](LICENSE.md).
