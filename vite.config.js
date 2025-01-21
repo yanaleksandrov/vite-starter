@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import { readdirSync, statSync } from 'fs';
-import eslint from 'vite-plugin-eslint';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import VitePluginSvgSpritemap from '@spiriit/vite-plugin-svg-spritemap';
 
@@ -41,10 +40,6 @@ export default defineConfig({
     minify: false, // 'esbuild',
   },
   plugins: [
-    eslint({
-      cache: false,
-      fix: true,
-    }),
     viteStaticCopy({
       targets: [
         {

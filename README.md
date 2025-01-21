@@ -1,6 +1,6 @@
 # Vite Vanilla JS Template
 
-Initially built for personal use, I created this template for starting a new project with Vite.js and Vanilla Javascript. It is already set up with standard development tools like ESLint and Prettier for easy code formatting and linting, with Vite for a robust, modern build process.
+Initially built for personal use, I created this template for starting a new project with Vite.js and Vanilla Javascript. It is already set up with standard development tools like Prettier for easy code formatting and linting, with Vite for a robust, modern build process.
 
 ## Scripts
 
@@ -44,8 +44,6 @@ This is the structure of the project:
 │   ├── sprites             # SVG files for generate sprites
 │   ├── scss                # CSS styles for your project
 ├── .editorconfig           # Configuration for the EditorConfig plugin
-├── .eslintignore           # Files to be ignored by ESLint
-├── .eslintrc.json          # Configuration for ESLint
 ├── .gitignore              # Files and folders to be ignored by Git
 ├── .prettierignore         # Files to be ignored by Prettier
 ├── .prettierrc             # Configuration for Prettier
