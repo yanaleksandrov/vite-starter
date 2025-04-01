@@ -1,6 +1,7 @@
 # Vite Vanilla JS Template
 
-Initially built for personal use, I created this template for starting a new project with Vite.js and Vanilla Javascript. It is already set up with standard development tools like Prettier for easy code formatting and linting, with Vite for a robust, modern build process.
+Initially built for personal use, I created this template for starting a new project with Vite.js and Vanilla Javascript.
+It is already set up with standard development tools like Prettier for easy code formatting and linting.
 
 ## Scripts
 
@@ -35,12 +36,12 @@ This is the structure of the project:
 
 ```plaintext
 /
-├── .github                 # Github actions and workflows
 ├── node_modules            # Node.js dependencies for the project.
 ├── src                     # Source code
 │   ├── fonts               # Store your fonts here
 │   ├── images              # Store your images here
 │   ├── js                  # Javascript files of your project
+│   ├── pages               # Pages
 │   ├── sprites             # SVG files for generate sprites
 │   ├── scss                # CSS styles for your project
 ├── .editorconfig           # Configuration for the EditorConfig plugin
@@ -58,9 +59,17 @@ This is the structure of the project:
 
 ## SVG usage
 
+SVG спрайты собираются на основе содержимого папки `src/sprites`. При этом, они группируются по
+названиям вложенных папок. Например, если в `src/sprites` есть подпапка `icons`, то для неё будет
+сгенерирован отдельный файл `sprites/icons.svg`, содержащий все SVG-файлы из этой папки.
+
+Таким образом, каждый каталог внутри `src/sprites` создаёт свой собственный SVG-спрайт с элементами из этой папки.
+
+Вот как использовать в вёрстке:
+
 ```
-<svg width="16" height="17" viewBox="0 0 16 17">
-  <use xlink:href="./assets/sprites/states.svg#sprite-linkedin-logo"></use>
+<svg width="16" height="16" viewBox="0 0 16 16" role="presentation">
+  <use xlink:href="./assets/sprites/icons.svg#linkedin-logo"></use>
 </svg>
 ```
 

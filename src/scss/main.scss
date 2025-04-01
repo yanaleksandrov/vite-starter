@@ -1,6 +1,7 @@
-@use 'interface/reset';
+@use 'normalize.css';
+
 @use 'interface/font';
 @use 'interface/vars';
 @use 'interface/base';
-@use 'interface/animations';
-@use 'interface/btn';
+
+@use 'atoms/btn';

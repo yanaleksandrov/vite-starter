@@ -1,0 +1,130 @@
+.btn {
+  $height: 2.375rem;
+  $fontSize: 0.8125rem;
+  $padding: 0.875rem;
+
+  font: inherit;
+  font-weight: 400;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  gap: 0.375em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  min-width: fit-content;
+  border-radius: 0.6em;
+  border: 1px solid;
+  line-height: 1;
+  text-decoration: none;
+  transition: background-color 0.25s, filter 0.25s, border-image 0.25s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  background-image: radial-gradient(60% 100% at 50% -30%, hsla(0, 0%, 100%, .12) 30%, hsla(0, 0%, 100%, 0) 100%);
+  color: var(--btn-color, inherit);
+  background-color: var(--btn-bg, transparent);
+  border-color: var(--btn-border, transparent);
+  box-shadow: var(--btn-shadow, none);
+  height: $height;
+  font-size: $fontSize;
+  padding: 0 $padding;
+
+  &:hover {
+    --btn-bg: #f4f4f4;
+  }
+
+  &[disabled],
+  &[disabled]:active,
+  &[disabled]:hover {
+    background-color: var(--btn-bg-disabled, #F4F4F6FF);
+    border-color: var(--btn-border-disabled, #E6E6E6FF);
+    color: var(--btn-color-disabled, #71777F);
+    pointer-events: none;
+    transition: none;
+  }
+
+  > svg {
+    width: 1.75em;
+    height: auto;
+
+    * {
+      fill: currentColor;
+    }
+  }
+
+  @each $size, $ratio in (
+    'xl': 1.25,
+    'lg': 1.125,
+    'sm': 0.875,
+    'xs': 0.75,
+  ) {
+    &--#{$size} {
+      padding: 0 #{calc($padding * $ratio)};
+      font-size: #{calc($fontSize * $ratio * 1.075)};
+      height: #{calc($height * $ratio)};
+    }
+  }
+
+  &--primary {
+    --btn-bg: #72e3ad;
+    --btn-color: #fff;
+    --btn-border: rgb(22 182 116 / 75%);
+
+    &:hover {
+      --btn-bg: #6cdca6;
+      --btn-border: #0f8a5a;
+    }
+  }
+
+  &--outline {
+    --btn-bg: #fff;
+    --btn-color: #000;
+    --btn-border: #e6e6e6;
+
+    &:hover {
+      --btn-bg: #f4f4f6;
+      --btn-border: #ccced3;
+    }
+  }
+
+  &--load {
+    color: transparent;
+    text-shadow: none;
+    pointer-events: none;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      vertical-align: text-bottom;
+      border: 1.75px solid currentColor;
+      border-right-color: transparent;
+      border-radius: 50%;
+      position: absolute;
+      width: 1.5em;
+      height: 1.5em;
+      inset: 0;
+      margin: auto;
+      animation: spinner-border .5s linear infinite;
+    }
+  }
+
+  &--full {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  &--icon {
+    padding: 0;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@keyframes spinner-border {
+  to {
+    transform: rotate(360deg)
+  }
+}

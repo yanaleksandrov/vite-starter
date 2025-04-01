@@ -21,9 +21,7 @@
   "scripts": {
     "dev": "vite --host --open",
     "format": "prettier --write \"./**/*.{js,jsx,json,css}\"",
-    "build": "vite build && vite build --config vite.config.min.js --emptyOutDir=false",
-    "preview": "vite preview --open",
-    "buildpreview": "vite build && vite preview --open"
+    "build": "vite build && vite build --config vite.config.min.js --emptyOutDir=false"
   },
   "devDependencies": {
     "@spiriit/vite-plugin-svg-spritemap": "^3.0.0",
@@ -38,6 +36,6 @@
     "vite-plugin-static-copy": "^2.2.0"
   },
   "dependencies": {
-
+    "normalize.css": "^8.0.1"
   }
 }
