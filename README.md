@@ -11,23 +11,11 @@ Use the following scripts for your development workflow:
 # Start the development server
 npm run dev
 
-# Checks your code for any linting errors
-npm run lint
-
-# Tries to automatically fix any linting errors present in your code
-npm run lint:fix
-
 # Formats your code in a consistent, predefined style using Prettier
 npm run format
 
 # Build for production
 npm run build
-
-# Preview the build
-npm run preview
-
-# Build and preview the project
-npm run buildpreview
 ```
 
 ## Folder Structure
@@ -41,7 +29,7 @@ This is the structure of the project:
 │   ├── fonts               # Store your fonts here
 │   ├── images              # Store your images here
 │   ├── js                  # Javascript files of your project
-│   ├── pages               # Pages
+│   ├── blocks              # Blocks html markup
 │   ├── sprites             # SVG files for generate sprites
 │   ├── scss                # CSS styles for your project
 ├── .editorconfig           # Configuration for the EditorConfig plugin
