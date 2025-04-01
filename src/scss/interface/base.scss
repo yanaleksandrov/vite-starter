@@ -25,15 +25,15 @@
 }
 
 *::-webkit-input-placeholder {
-  color: var(--vite-starter-text-pale);
+  color: var(--vite-starter-text-muted);
 }
 
 *::-moz-placeholder {
-  color: var(--vite-starter-text-pale);
+  color: var(--vite-starter-text-muted);
 }
 
 *::placeholder {
-  color: var(--vite-starter-text-pale);
+  color: var(--vite-starter-text-muted);
 }
 
 *:focus::-webkit-input-placeholder {
@@ -65,8 +65,8 @@ body {
   -webkit-font-smoothing: antialiased;
   min-height: 100dvh;
   overflow-x: hidden;
-  font-style: normal;
   color: var(--vite-starter-text-dark);
+  font-style: normal;
   font-size: #{calc(16 / 16)}rem;
   font-family: var(--vite-starter-font-text);
   font-optical-sizing: auto;

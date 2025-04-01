@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
-import { existsSync, readdirSync, statSync } from 'fs';
+import { readdirSync, statSync } from 'fs';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import VitePluginSvgSpritemap from '@spiriit/vite-plugin-svg-spritemap';
 
@@ -14,15 +14,6 @@ const sprites = readdirSync('src/sprites').filter((file) =>
   statSync(`src/sprites/${file}`).isDirectory(),
 );
 
-// Автоматически собираем все HTML файлы из папки src/pages
-const htmlPages = existsSync(resolve(__dirname, 'src/pages'))
-  ? Object.fromEntries(
-      readdirSync(resolve(__dirname, 'src/pages'))
-        .filter((file) => file.endsWith('.html'))
-        .map((file) => [file.replace('.html', ''), resolve(__dirname, file)]),
-    )
-  : {};
-
 export default defineConfig({
   root: './',
   build: {
@@ -30,7 +21,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        ...htmlPages,
         ...additionalFiles,
       },
       output: {
@@ -47,7 +37,7 @@ export default defineConfig({
         entryFileNames: 'js/[name].js',
       },
     },
-    minify: false, // 'esbuild',
+    minify: false,
   },
   plugins: [
     ...(readdirSync('src/fonts').length
