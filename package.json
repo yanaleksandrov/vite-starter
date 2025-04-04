@@ -31,6 +31,7 @@
     "vite-plugin-handlebars": "^2.0.0"
   },
   "dependencies": {
+    "esbuild": "^0.25.2",
     "normalize.css": "^8.0.1"
   }
 }
