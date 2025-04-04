@@ -22,7 +22,6 @@
     "@spiriit/vite-plugin-svg-spritemap": "^3.0.0",
     "autoprefixer": "^10.4.20",
     "cssnano": "^7.0.6",
-    "esbuild": "^0.25.2",
     "postcss": "^8.5.1",
     "postcss-nesting": "^13.0.1",
     "prettier": "^3.4.2",
