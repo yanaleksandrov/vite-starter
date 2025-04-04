@@ -3,8 +3,9 @@ import { resolve } from 'path';
 import { readdirSync, statSync } from 'fs';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import VitePluginSvgSpritemap from '@spiriit/vite-plugin-svg-spritemap';
+import handlebars from 'vite-plugin-handlebars';
 
-const additionalFiles = Object.fromEntries(
+export const additionalFiles = Object.fromEntries(
   readdirSync(resolve(__dirname, 'src/js'))
     .filter((file) => file.endsWith('.js'))
     .map((file) => [file.replace('.js', ''), `src/js/${file}`]),
@@ -20,19 +21,16 @@ export default defineConfig({
     outDir: 'assets',
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
+        main: resolve(__dirname, 'public/index.html'),
         ...additionalFiles,
       },
       output: {
-        assetFileNames: (chunkInfo) => {
-          const ext = chunkInfo.name.split('.').pop();
-          if (ext === 'css') {
-            return 'css/[name].[ext]';
-          } else if (['woff2', 'woff', 'ttf', 'eot'].includes(ext)) {
+        assetFileNames: ({ name }) => {
+          const ext = name.split('.').pop();
+          if (['woff2', 'woff', 'ttf', 'eot'].includes(ext)) {
             return 'fonts/[name].[ext]';
-          } else {
-            return '[ext]/[name].[ext]';
           }
+          return '[ext]/[name].[ext]';
         },
         entryFileNames: 'js/[name].js',
       },
@@ -40,6 +38,16 @@ export default defineConfig({
     minify: false,
   },
   plugins: [
+    handlebars({
+      context: {
+        user: {
+          name: 'John Doe',
+          age: 30,
+          location: { city: 'Moscow', country: 'Russia' }
+        }
+      },
+      partialDirectory: resolve(__dirname, 'src/blocks'),
+    }),
     ...(readdirSync('src/fonts').length
       ? viteStaticCopy({
           targets: [

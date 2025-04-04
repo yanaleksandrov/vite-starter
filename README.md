@@ -26,12 +26,12 @@ This is the structure of the project:
 /
 ├── node_modules            # Node.js dependencies for the project.
 ├── src                     # Source code
+│   ├── blocks              # Blocks html markup
 │   ├── fonts               # Store your fonts here
 │   ├── images              # Store your images here
 │   ├── js                  # Javascript files of your project
-│   ├── blocks              # Blocks html markup
-│   ├── sprites             # SVG files for generate sprites
 │   ├── scss                # CSS styles for your project
+│   ├── sprites             # SVG files for generate sprites
 ├── .editorconfig           # Configuration for the EditorConfig plugin
 ├── .gitignore              # Files and folders to be ignored by Git
 ├── .prettierignore         # Files to be ignored by Prettier

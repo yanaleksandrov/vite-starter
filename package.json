@@ -6,7 +6,6 @@
   "keywords": [
     "vanilla",
     "javascript",
-    "template",
     "boilerplate",
     "boilerplate-template",
     "vite",
@@ -29,6 +28,7 @@
     "sass-embedded": "^1.83.4",
     "svgo": "^3.3.2",
     "vite": "6.0.7",
+    "vite-plugin-handlebars": "^2.0.0",
     "vite-plugin-static-copy": "^2.2.0"
   },
   "dependencies": {
