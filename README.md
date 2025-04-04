@@ -18,9 +18,7 @@ npm run format
 npm run build
 ```
 
-## Folder Structure
-
-This is the structure of the project:
+## Folders Structure
 
 ```plaintext
 /
@@ -44,24 +42,19 @@ This is the structure of the project:
 ├── vite.config.js          # Configuration for Vite (for build regular & minified JS & CSS files)
 ```
 
-## SVG usage
+## SVG sprites
 
-SVG спрайты собираются на основе содержимого папки `src/sprites`. При этом, они группируются по
-названиям вложенных папок. Например, если в `src/sprites` есть подпапка `icons`, то для неё будет
-сгенерирован отдельный файл `sprites/icons.svg`, содержащий все SVG-файлы из этой папки.
+SVG sprites are generated based on the contents of the `src/sprites` folder. They are grouped by
+the names of the nested folders. For example, if there is a subfolder `icons` in `src/sprites`, a
+separate file `sprites/icons.svg` will be generated containing all the SVG files from that folder.
 
-Таким образом, каждый каталог внутри `src/sprites` создаёт свой собственный SVG-спрайт с элементами из этой папки.
+Thus, each directory inside `src/sprites` creates its own SVG sprite with elements from that folder.
 
-Вот как использовать в вёрстке:
+### How to use it in the markup:
 
 ```
 <svg width="16" height="16" viewBox="0 0 16 16" role="presentation">
-  <use xlink:href="./assets/sprites/icons.svg#linkedin-logo"></use>
+  <use xlink:href="./assets/sprites/icons.svg#icon-name"></use>
 </svg>
 ```
-
-## License
-
-This template was created under the [MIT License](LICENSE.md).
-
-**Happy coding!** 👨‍💻
+Where `icon-name` is the ID of the specific icon inside the icons.svg sprite.
