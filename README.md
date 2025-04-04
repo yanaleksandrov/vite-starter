@@ -50,7 +50,7 @@ separate file `sprites/icons.svg` will be generated containing all the SVG files
 
 Thus, each directory inside `src/sprites` creates its own SVG sprite with elements from that folder.
 
-### How to use it in the markup:
+#### How to use it in the markup:
 
 ```
 <svg width="16" height="16" viewBox="0 0 16 16" role="presentation">
