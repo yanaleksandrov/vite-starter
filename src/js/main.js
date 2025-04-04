@@ -7,7 +7,6 @@ import '../scss/main.scss';
  */
 document.addEventListener('click', (e) => {
   const el = e.target;
-
   if (el.closest('[data-js-event]')) {
     e.preventDefault();
   }

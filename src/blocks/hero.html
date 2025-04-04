@@ -1,6 +1,11 @@
 <div class="hero">
-  <h2 class="hero-title">{{title}}</h2>
-  <div class="hero-description">
-    <p>{{content}}</p>
-  </div>
+  {{#if title}}
+    <h2 class="hero-title">{{title}}</h2>
+  {{/if}}
+
+  {{#if description}}
+    <div class="hero-description">
+      <p>{{description}}</p>
+    </div>
+  {{/if}}
 </div>

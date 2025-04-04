@@ -38,11 +38,10 @@ This is the structure of the project:
 ├── .prettierrc             # Configuration for Prettier
 ├── index.html              # The HTML file for your project
 ├── LICENSE                 # The license for your project
-├── package-lock.json       # Lockfile for your project's dependencies
 ├── package.json            # Defines your project and its dependencies
+├── postcss.config.cjs      # Configuration for PostCSS
 ├── README.md               # This file
-├── vite.config.js          # Configuration for Vite
-├── vite.config.min.js      # Configuration for minified JS & CSS Vite files
+├── vite.config.js          # Configuration for Vite (for build regular & minified JS & CSS files)
 ```
 
 ## SVG usage

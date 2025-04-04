@@ -16,20 +16,20 @@
   "scripts": {
     "dev": "vite --host --open",
     "format": "prettier --write \"./**/*.{js,jsx,json,css}\"",
-    "build": "vite build && vite build --config vite.config.min.js --emptyOutDir=false"
+    "build": "vite build"
   },
   "devDependencies": {
     "@spiriit/vite-plugin-svg-spritemap": "^3.0.0",
     "autoprefixer": "^10.4.20",
     "cssnano": "^7.0.6",
+    "esbuild": "^0.25.2",
     "postcss": "^8.5.1",
     "postcss-nesting": "^13.0.1",
     "prettier": "^3.4.2",
     "sass-embedded": "^1.83.4",
     "svgo": "^3.3.2",
     "vite": "6.0.7",
-    "vite-plugin-handlebars": "^2.0.0",
-    "vite-plugin-static-copy": "^2.2.0"
+    "vite-plugin-handlebars": "^2.0.0"
   },
   "dependencies": {
     "normalize.css": "^8.0.1"
